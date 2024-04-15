@@ -1,7 +1,7 @@
 
 export default async function Home() {
-  // const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/users`);
-  // const users = await data.json();
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/users`);
+  const users = await data.json();
   return (
     <div>
       {/* {
@@ -9,7 +9,7 @@ export default async function Home() {
           return <p key={user.id}>{user.name}</p>
         })
       } */}
-      hello
+      hello  {process.env.NEXT_PUBLIC_BASE_API_URL}
     </div>
   )
 }
