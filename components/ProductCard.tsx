@@ -3,6 +3,7 @@ import { useCartStore } from '@/useCartStore';
 import React, { FC, useState } from 'react'
 import { productType } from './Cards';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 interface Props {
     item: productType;
     setError: React.Dispatch<React.SetStateAction<boolean>>
@@ -29,14 +30,20 @@ const ProductCard: FC<Props> = ({ item, setError }) => {
                 setData(res.data);
                 console.log(res.data);
                 addToCart(res.data.data.cart)
+                toast.success("Added to cart")
             }
             if (res.data.error) {
-                setError(res.data.error);
+                setError(true);
+                toast.error("error")
+
             }
             setLoading(false)
         } catch (error) {
             setLoading(false)
             console.log(error);
+            setError(true);
+
+            toast.error("error")
 
         }
     };
@@ -48,12 +55,18 @@ const ProductCard: FC<Props> = ({ item, setError }) => {
                 setData(res.data);
 
                 addToCart(res.data.data.cart)
+                toast.success("Remove From cart")
+
             }
             if (res.data.error) {
                 setError(true);
+                toast.error("error")
+
             }
             setLoading(false)
         } catch (error) {
+            toast.error("error")
+
             setLoading(false)
             console.log(error);
             setError(true)

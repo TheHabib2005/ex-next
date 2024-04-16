@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
 
     const userId = await getDataFromToken(request);
     const user = await User.findOne({ _id: userId });
-    const isProductInCart = user.cart.find((cart) => cart.id === body.id);
+    const isProductInCart = user.cart.find((cart: any) => cart.id === body.id);
     if (isProductInCart) {
       let updateCart = [...user.cart];
 
