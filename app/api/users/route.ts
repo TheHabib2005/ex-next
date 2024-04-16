@@ -1,6 +1,7 @@
-import { NextResponse } from "next/server";
-export const POST = async () => {
+import { NextRequest, NextResponse } from "next/server";
+export const POST = async (request: NextRequest) => {
   try {
+    const body = await request.json();
     return NextResponse.json([
       {
         id: 1,

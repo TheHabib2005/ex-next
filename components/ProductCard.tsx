@@ -68,7 +68,7 @@ const ProductCard: FC<Props> = ({ item, setError }) => {
         }
     };
 
-    console.log(data);
+    console.log(item);
 
     const my = (id: number) => {
         if (cart?.length > 0) {
