@@ -1,5 +1,4 @@
 "use client"
-import axios from 'axios';
 import React, { useState } from 'react'
 import { useCartStore } from "@/useCartStore.js"
 import ProductCard from './ProductCard';
@@ -27,59 +26,7 @@ const Cards = () => {
 
     ]);
 
-    // const [data, setData] = useState([])
     const [error, setError] = useState(false)
-
-    // const [loading, setLoading] = useState({})
-
-
-
-
-
-
-    // const handleCart = async (product: productType) => {
-    //     try {
-    //         setLoading(true)
-
-    //         const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/authentication/cart/add`, product);
-    //         if (res.data.success) {
-    //             setData(res.data);
-    //             console.log(res.data);
-    //             addToCart(res.data.data.cart)
-    //         }
-    //         if (res.data.error) {
-    //             setError(res.data.error);
-    //         }
-    //         setLoading(false)
-    //     } catch (error) {
-    //         setLoading(false)
-    //         console.log(error);
-
-    //     }
-    // };
-    // const removeCart = async (product: productType) => {
-    //     try {
-    //         setLoading(true)
-    //         const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/authentication/cart/remove`, product);
-    //         if (res.data.success) {
-    //             setData(res.data);
-
-    //             addToCart(res.data.data.cart)
-    //         }
-    //         if (res.data.error) {
-    //             setError(res.data.error);
-    //         }
-    //         setLoading(false)
-    //     } catch (error) {
-    //         setLoading(false)
-    //         console.log(error);
-
-    //     }
-    // };
-
-
-
-    // console.log(data);
 
 
 

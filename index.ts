@@ -6,7 +6,7 @@ export const getData = async () => {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify("habib"),
+    body: JSON.stringify({ name: "habib" }),
   });
   return res;
 };

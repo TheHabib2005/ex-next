@@ -63,19 +63,11 @@ const SignInComponent = () => {
         validationSchema: SignInValidactionSchema,
         onSubmit: (value) => {
             handleLogin(value)
-            handleReset({
-                username: "",
+            handleReset(initialValues = {
                 email: "",
                 password: "",
             });
         },
-        onReset: () => {
-            initialValues = {
-
-                email: "",
-                password: "",
-            }
-        }
     })
 
 
